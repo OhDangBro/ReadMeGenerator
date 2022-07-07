@@ -15,7 +15,7 @@
 
 
 ## Description 
-This project generates a read me for future projects.
+This project generates a read me through user input.
 ## Installation:  
 N/A
 ### Usage: 
@@ -28,7 +28,7 @@ N/A
 N/A
 ### Contact: 
 Please contact me with any questions through the email below!
- Contact Info: will@aol.comFeel free to check out other projects I have worked on : www.github.com/Will 
+ Contact Info: will@aol.comFeel free to check out other projects I have worked on : www.github.com/will 
       
       
       
