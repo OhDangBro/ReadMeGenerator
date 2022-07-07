@@ -1,14 +1,14 @@
 
-      #dsfds
-      ## https://img.shields.io/static/v1?label=License&message=sdaf&color=blue
-      ### Github: dsfsd
-      ### Email: dsafdsa
-      ### Description:dsfds
-      ### Installation: dsfsda
-      ### Usage: dsfsda
-      ### License: Creative Commons
-      ### Contributors sdfds
-      ### Questions: sdaf
+      #adfsfsda
+      ## https://img.shields.io/static/v1?label=License&message=dsf&color=blue
+      ### Github: dsfsad
+      ### Email: dsfads
+      ### Description:dsafsda
+      ### Installation: sdfdsa
+      ### Usage: sdfdsa
+      ### License: General Public License
+      ### Contributors efsdasd
+      ### Questions: dsf
       
       
       
