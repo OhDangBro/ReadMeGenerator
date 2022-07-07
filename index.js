@@ -22,6 +22,33 @@ inquirer
         
         },
         {
+          type: 'input',
+          message: 'Github',
+          name: 'github',
+          validate: descriptionInput => {
+              if (descriptionInput) {
+                return true;
+              } else {
+                console.log('Please enter your github link');
+                return false;
+              }
+          }
+      },
+      {
+        type: 'input',
+        message: 'Email',
+        name: 'email',
+        validate: descriptionInput => {
+            if (descriptionInput) {
+              return true;
+            } else {
+              console.log('You need to enter your email');
+              return false;
+            }
+          }
+    
+    },
+        {
             type: 'input',
             message: 'Description of Project',
             name: 'description',
@@ -79,17 +106,25 @@ inquirer
         
         },
         {
-            type: 'input',
-            message: 'License',
+            type: 'rawlist',
+            message: 'Please pick a license:',
             name: 'License',
-            validate: licenseInput => {
-                if (licenseInput) {
-                  return true;
-                } else {
-                  console.log('You need to enter licenses');
-                  return false;
-                }
-              }
+            choices: ['MIT', 'Creative Commons', 'General Public License', 'Open Source' ],
+            validateResponse() {
+            if ('MIT') {
+          }
+          else if ('Creative Commons') {
+              console.log("You are probably well informed");
+          }
+          else if ('General Public License') {
+              console.log('General Public License');
+          }
+          else {
+              console.log('Open Source');
+          }
+          
+        }
+        
         
         },
         {
@@ -137,13 +172,17 @@ inquirer
     ]).then((data) => {
       fs.writeFile('README.MD', `
       #${data.title}
-      ##${data.description}
-      ###${data.installation}
-      ###${data.installation}
-      ###${data.License}
-      ###${data.contributing}
-      ###${data.questions}
-
+      ## https://img.shields.io/static/v1?label=License&message=${data.questions}&color=blue
+      ### Github: ${data.github}
+      ### Email: ${data.email}
+      ### Description:${data.description}
+      ### Installation: ${data.installation}
+      ### Usage: ${data.installation}
+      ### License: ${data.License}
+      ### Contributors ${data.contributing}
+      ### Questions: ${data.questions}
+      
+      
       ` , err => {
         if (err) throw err;
       
