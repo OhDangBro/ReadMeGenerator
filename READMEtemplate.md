@@ -1,7 +1,7 @@
 
 # ReadMe Generator
-### Link: N/A
-## ![license](https://img.shields.io/badge/license-Open Source-blue)
+### Link: www.link.com
+## ![license](https://img.shields.io/badge/license-MIT-blue)
 ## Table of Contents:
 
 [Description](#description) 
@@ -15,20 +15,20 @@
 
 
 ## Description 
-This project generates a readme.md file through prompts.
+This project generates a read me for future projects.
 ## Installation:  
-Node inquirer needed.
+N/A
 ### Usage: 
- Node inquirer needed.
+ N/A
 ### Licensing: 
-  This project is licensed by: Open Source
+  This project is licensed by: MIT
 ### Contributors: 
  N/A
 ### Questions: 
 N/A
 ### Contact: 
 Please contact me with any questions through the email below!
- Contact Info: N/AFeel free to check out other projects I have worked on : ohdangbro 
+ Contact Info: will@aol.comFeel free to check out other projects I have worked on : www.github.com/Will 
       
       
       

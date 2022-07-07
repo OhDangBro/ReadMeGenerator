@@ -63,22 +63,22 @@ inquirer
         
         },
         {
-            type: 'input',
-            message: 'Please list the table of contents',
-            name: 'table',
-            validate: tableInput => {
-                if (tableInput) {
-                  return true;
-                } else {
-                  console.log('You need to enter a table of contents!');
-                  return false;
-                }
-              }
+          type: 'rawlist',
+          message: 'Would you like a table of contents?',
+          name: 'table',
+          choices: ['Yes', 'No' ],
+          validateResponse() {
+          if ('No') {
+        }
+        else if ('No') {
+            console.log("Table not included");
+        }
         
-        },
+        }
+      },
         {
             type: 'input',
-            message: 'Is installation required?',
+            message: 'Please input installation details?',
             name: 'installation',
 
             validate: installInput => {
@@ -93,7 +93,7 @@ inquirer
         },
         {
             type: 'input',
-            message: 'How is the project used?',
+            message: 'What was used for this project?',
             name: 'usage',
             validate: usageInput => {
                 if (usageInput) {
@@ -113,14 +113,14 @@ inquirer
             validateResponse() {
             if ('MIT') {
           }
-          else if ('Creative Commons') {
+          else if ('CreativeCommons') {
               console.log("You are probably well informed");
           }
-          else if ('General Public License') {
-              console.log('General Public License');
+          else if ('GeneralPublicLicense') {
+              console.log('GeneralPublicLicense');
           }
           else {
-              console.log('Open Source');
+              console.log('OpenSource');
           }
           
         }
@@ -169,18 +169,34 @@ inquirer
               }
         
         },
+        {
+          type: 'input',
+          message: 'Please enter a link to your project.',
+          name: 'link',
+          validate: questionInput => {
+              if (questionInput) {
+                return true;
+              } else {
+                console.log('You need to enter questions!');
+                return false;
+              }
+            }
+      
+      },
     ]).then((data) => {
-      fs.writeFile('README.md', `
+      fs.writeFile('READMEtemplate.md', `
 # ${data.title}
+### Link: ${data.link}
 ## ![license](https://img.shields.io/badge/license-${data.License}-blue)
 ## Table of Contents:
 
-[Description](#description:) 
+[Description](#description) 
 [Install](#installation) 
-[License](#license) 
-[Contributors](#contributing) 
+[Licensing](#licensing) 
+[Usage](#usage)
+[Contributors](#contributors) 
 [Questions](#questions) 
-[Contact](#contact:) 
+[Contact](#contact) 
 
 
 
@@ -190,15 +206,15 @@ ${data.description}
 ${data.installation}
 ### Usage: 
  ${data.installation}
-### License: 
- ${data.License}
+### Licensing: 
+  This project is licensed by: ${data.License}
 ### Contributors: 
  ${data.contributing}
 ### Questions: 
 ${data.questions}
-### Contact 
- Please contact me with any questions through the email below!
-### Github: ${data.github} Contact Info: ${data.email}
+### Contact: 
+Please contact me with any questions through the email below!
+ Contact Info: ${data.email}Feel free to check out other projects I have worked on : ${data.github} 
       
       
       ` , err => {
