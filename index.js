@@ -170,7 +170,7 @@ inquirer
         
         },
     ]).then((data) => {
-      fs.writeFile('README.MD', `
+      fs.writeFile('readme.md', `
       #${data.title}
       ## https://img.shields.io/static/v1?label=License&message=${data.questions}&color=blue
       ### Github: ${data.github}
