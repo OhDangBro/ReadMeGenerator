@@ -23,7 +23,7 @@ inquirer
         },
         {
           type: 'input',
-          message: 'Github',
+          message: 'Please enter your github account link.',
           name: 'github',
           validate: descriptionInput => {
               if (descriptionInput) {
@@ -36,7 +36,7 @@ inquirer
       },
       {
         type: 'input',
-        message: 'Email',
+        message: 'Please enter your email!',
         name: 'email',
         validate: descriptionInput => {
             if (descriptionInput) {
@@ -50,7 +50,7 @@ inquirer
     },
         {
             type: 'input',
-            message: 'Description of Project',
+            message: 'Please enter a description of the project.',
             name: 'description',
             validate: descriptionInput => {
                 if (descriptionInput) {
@@ -64,7 +64,7 @@ inquirer
         },
         {
             type: 'input',
-            message: 'Table of contents',
+            message: 'Please list the table of contents',
             name: 'table',
             validate: tableInput => {
                 if (tableInput) {
@@ -78,7 +78,7 @@ inquirer
         },
         {
             type: 'input',
-            message: 'installation required',
+            message: 'Is installation required?',
             name: 'installation',
 
             validate: installInput => {
@@ -93,7 +93,7 @@ inquirer
         },
         {
             type: 'input',
-            message: 'Used for',
+            message: 'How is the project used?',
             name: 'usage',
             validate: usageInput => {
                 if (usageInput) {
@@ -173,13 +173,31 @@ inquirer
       fs.writeFile('README.md', `
 # ${data.title}
 ## ![license](https://img.shields.io/badge/license-${data.License}-blue)
-### Description:${data.description}
-### Installation: ${data.installation}
-### Usage: ${data.installation}
-### License: ${data.License}
-### Contributors ${data.contributing}
-### Questions: ${data.questions}
-### Creator and Contact: 
+## Table of Contents:
+
+[Description](#description:) 
+[Install](#installation) 
+[License](#license) 
+[Contributors](#contributing) 
+[Questions](#questions) 
+[Contact](#contact:) 
+
+
+
+## Description 
+${data.description}
+## Installation:  
+${data.installation}
+### Usage: 
+ ${data.installation}
+### License: 
+ ${data.License}
+### Contributors: 
+ ${data.contributing}
+### Questions: 
+${data.questions}
+### Contact 
+ Please contact me with any questions through the email below!
 ### Github: ${data.github} Contact Info: ${data.email}
       
       
