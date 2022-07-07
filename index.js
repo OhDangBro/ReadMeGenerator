@@ -171,16 +171,16 @@ inquirer
         },
     ]).then((data) => {
       fs.writeFile('README.md', `
-      #${data.title}
-      ## https://img.shields.io/static/v1?label=License&message=${data.questions}&color=blue
-      ### Github: ${data.github}
-      ### Email: ${data.email}
-      ### Description:${data.description}
-      ### Installation: ${data.installation}
-      ### Usage: ${data.installation}
-      ### License: ${data.License}
-      ### Contributors ${data.contributing}
-      ### Questions: ${data.questions}
+# ${data.title}
+## ![license](https://img.shields.io/badge/license-${data.License}-blue)
+### Description:${data.description}
+### Installation: ${data.installation}
+### Usage: ${data.installation}
+### License: ${data.License}
+### Contributors ${data.contributing}
+### Questions: ${data.questions}
+### Creator and Contact: 
+### Github: ${data.github} Contact Info: ${data.email}
       
       
       ` , err => {
